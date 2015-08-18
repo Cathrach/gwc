@@ -27,3 +27,21 @@ function buildList(data) {
   }
   filteredList = gameList;
 }
+
+$(document).click('click', '#searchNameBtn', function(e) {
+  e.preventDefault();
+  searchName($('#searchNameField').val());
+})
+
+$(document).click('click', '#searchDevBtn', function(e) {
+  e.preventDefault();
+  searchName($('#searchDevField').val());
+})
+
+$(document).click('click', '.sorting', function(e) {
+  var selected = [];
+  $.each($('input:checked'), function() {
+    selected.push($(this).val());
+  })
+  console.log(selected);
+})
