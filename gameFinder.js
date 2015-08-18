@@ -7,7 +7,7 @@ function buildList(data) {
       dataType: "jsonp",
       url: "https://itunes.apple.com/lookup?id=" + data[i].ID,
     }).done( function(data) {
-      console.log(data['results']);
+      console.log(data['results'][0]);
     })
   }
 }
