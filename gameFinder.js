@@ -10,6 +10,7 @@ function buildList(data) {
       dataType: "jsonp",
       url: "https://itunes.apple.com/lookup?id=" + data[i].ID,
     }).done( function(list) {
+      console.log(i);
       var tags = data[i].Tags.split(',');
       console.log(tags);
       var tagstring = '';
