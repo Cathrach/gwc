@@ -33,7 +33,7 @@ $(document).on('click', '#searchNameBtn', function(e) {
   searchName($('#searchNameField').val());
 })
 
-$(document).on'click', '#searchDevBtn', function(e) {
+$(document).on('click', '#searchDevBtn', function(e) {
   e.preventDefault();
   searchName($('#searchDevField').val());
 })
