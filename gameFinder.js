@@ -40,7 +40,7 @@ $(document).click('click', '#searchDevBtn', function(e) {
 
 $(document).click('click', '.sorting', function(e) {
   var selected = [];
-  $.each($('input:checked'), function() {
+  $.each($('checkbox:checked'), function() {
     selected.push($(this).val());
   })
   console.log(selected);
