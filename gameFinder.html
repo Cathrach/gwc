@@ -71,6 +71,12 @@
           callback: buildList,
           simpleSheet: true
         });
+
+        $('#searchNameField').keypress( function(e) {
+          if (e.keyCode == 13) {
+            searchName($('#searchNameField').val());
+          }
+        })
       })
     </script>
   </body>
