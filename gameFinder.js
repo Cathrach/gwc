@@ -7,11 +7,13 @@ function buildList(data) {
     var iTunesData;
     var info;
     var tags = data[i].Tags.split(',');
+    console.log(tags);
     var tagstring = '';
     for (var j in tags) {
       tagstring += tags[j] + ', ';
     }
     tagstring = tagstring.slice(0, -2);
+    console.log(tagstring);
     $.ajax({
       dataType: "jsonp",
       url: "https://itunes.apple.com/lookup?id=" + data[i].ID,
