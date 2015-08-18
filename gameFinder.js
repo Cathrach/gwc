@@ -35,13 +35,13 @@ $(document).on('click', '#searchNameBtn', function(e) {
 
 $(document).on('click', '#searchDevBtn', function(e) {
   e.preventDefault();
-  searchName($('#searchDevField').val());
+  searchDev($('#searchDevField').val());
 })
 
-$('input[name="sorting"]').click( function() {
+$(document).on('click', '#filter', function(e) {
   var selected = [];
-  $.each($("input[name='sorting']:checked"), function() {
-    selected.push($(this).value);
-  });
+  $.each($('input[name="sorting"]:checked'), function() {
+    return $(this).value;
+  })
   console.log(selected);
-});
+})
