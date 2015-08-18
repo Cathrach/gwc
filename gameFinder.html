@@ -52,7 +52,22 @@
       function searchName(game_name) {
         shown = [];
         var query = game_name.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-        if (query.length <= 2) {
+        if (query.length < 2) {
+          $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
+        } else {
+          for (var game in gameList) {
+            if (gameList[game]['name'].toLowerCase().search(query) != -1) {
+              shown.push(gameList[game]['collapsedInfo']);
+            }
+          }
+          (shown.length === 0) ? $(gameView).html('No results found.') : $(gameView).html(shown.join(' '));
+        }
+      }
+
+      function searchDev(dev_name) {
+        shown = [];
+        var query = dev_name.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+        if (query.length < 2) {
           $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
         } else {
           for (var game in gameList) {
@@ -75,6 +90,12 @@
         $('#searchNameField').keypress( function(e) {
           if (e.keyCode == 13) {
             searchName($('#searchNameField').val());
+          }
+        })
+
+        $('#searchDevField').keypress( function(e) {
+          if (e.keyCode == 13) {
+            searchName($('#searchDevField').val());
           }
         })
       })
