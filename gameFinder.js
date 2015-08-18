@@ -9,6 +9,6 @@ function buildList(data) {
     }).done( function(data) {
       iTunesData = data;
     })
-    console.log(data);
+    console.log(iTunesData);
   }
 }
