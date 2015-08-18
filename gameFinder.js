@@ -38,10 +38,10 @@ $(document).click('click', '#searchDevBtn', function(e) {
   searchName($('#searchDevField').val());
 })
 
-$(document).click('click', 'button', function(e) {
+$('input[name="sorting"]').click( function() {
   var selected = [];
   $.each($("input[name='sorting']:checked"), function() {
     selected.push($(this).value);
-  })
+  });
   console.log(selected);
-})
+});
