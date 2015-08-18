@@ -71,7 +71,7 @@
           $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
         } else {
           for (var game in gameList) {
-            if (gameList[game]['name'].toLowerCase().search(query) != -1) {
+            if (gameList[game]['developer'].toLowerCase().search(query) != -1) {
               shown.push(gameList[game]['collapsedInfo']);
             }
           }
