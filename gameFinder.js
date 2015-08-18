@@ -2,11 +2,11 @@ var gameList;
 var filteredList;
 var shown;
 
-function buildList(data) {
-  for (var i in data) {
-    var iTunesData;
+function buildList(list) {
+  for (var i in list) {
+    var iTuneslist;
     var info;
-    var tags = data[i].Tags.split(',');
+    var tags = list[i].Tags.split(',');
     console.log(tags);
     var tagstring = '';
     for (var j in tags) {
@@ -15,7 +15,7 @@ function buildList(data) {
     tagstring = tagstring.slice(0, -2);
     console.log(tagstring);
     $.ajax({
-      dataType: "jsonp",
+      listType: "jsonp",
       url: "https://itunes.apple.com/lookup?id=" + data[i].ID,
     }).done( function(data) {
       // data['results'][0] is what we're looking at~
