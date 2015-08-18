@@ -2,7 +2,7 @@ var gameList;
 var filteredList;
 var shown;
 
-function builddata(data) {
+function buildList(data) {
   for (var i in data) {
     var iTunesdata;
     var info;
