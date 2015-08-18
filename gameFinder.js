@@ -40,8 +40,8 @@ $(document).on('click', '#searchDevBtn', function(e) {
 
 $(document).on('click', '#filter', function(e) {
   var selected = [];
-  $.each($('input[name="sorting"]:checked'), function() {
-    selected.push($(this).value);
-  })
+  for (var check in $('input[name="sorting"]:checked')) {
+    selected.push($('input[name="sorting"]:checked')[checked].value);
+  }
   console.log(selected);
 })
