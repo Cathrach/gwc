@@ -39,9 +39,8 @@ $(document).click('click', '#searchDevBtn', function(e) {
 })
 
 $(document).click('click', '.sorting', function(e) {
-  var selected = [];
-  $(".sorting:checked").each( function() {
-    selected.push($(this).name);
-  })
+  var selected = $('.sorted:checked').map( function() {
+    return this.name;
+  }).get();
   console.log(selected);
 })
