@@ -43,5 +43,6 @@ $(document).on('click', '#filter', function(e) {
   for (var check in $('input[name="sorting"]:checked')) {
     selected.push($('input[name="sorting"]:checked')[check].value);
   }
+  selected = selected.filter( Boolean );
   console.log(selected);
 })
