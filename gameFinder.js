@@ -28,12 +28,12 @@ function buildList(data) {
   filteredList = gameList;
 }
 
-$(document).click('click', '#searchNameBtn', function(e) {
+$(document).on('click', '#searchNameBtn', function(e) {
   e.preventDefault();
   searchName($('#searchNameField').val());
 })
 
-$(document).click('click', '#searchDevBtn', function(e) {
+$(document).on'click', '#searchDevBtn', function(e) {
   e.preventDefault();
   searchName($('#searchDevField').val());
 })
