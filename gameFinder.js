@@ -26,8 +26,8 @@ function buildList(data) {
   filteredList = gameList;
 }
 
-$(searchNameBtn).keypress( function(event) {
+$('#searchNameField').keypress( function(event) {
   if (event.keyCode == 13) {
-    searchName($(searchNameBtn).val());
+    searchName($('#searchNameField').val());
   }
 })
