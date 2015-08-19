@@ -59,7 +59,9 @@
 }
 
 .gamePics {
-    position: relative;
+    position: absolute;
+    top: 50px;
+    left: 0;
     height: 175px;
     width: 275px;
 }
