@@ -53,18 +53,6 @@ $(document).on('click', '#searchDevBtn', function(e) {
   searchDev($('#searchDevField').val());
 })
 
-$(document).on('click', '.gameScreenshot', function(e) {
-  $('#screenshotPreview').attr('src', $(this).attr('src'));
-  if ($('#screenshotPreview').width() > $('#screenshotPreview').height()) {
-    $('#screenshotPreview').width(500);
-    break;
-  } else {
-    $('#screenshotPreview').height(500);
-    break;
-  }
-  $('#imageModal').modal('show');
-})
-
 $(document).on('click', '#filter', function(e) {
   var selected = [];
   for (var check in $('input[name="sorting"]:checked')) {
