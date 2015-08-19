@@ -55,6 +55,11 @@ $(document).on('click', '#searchDevBtn', function(e) {
 
 $(document).on('click', '.gameScreenshot', function(e) {
   $('#screenshotPreview').attr('src', $(this).attr('src'));
+  if ($('#screenshotPreview').width() > $('#screenshotPreview').height()) {
+    $('#screenshotPreview').attr('width', 500px);
+  } else {
+    $('#screenshotPreview').attr('height', 500px);
+  }
   $('#imageModal').modal('show');
 })
 
