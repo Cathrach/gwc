@@ -42,7 +42,9 @@ $(document).on('click', '#filter', function(e) {
   var selected = [];
   for (var check in $('input[name="sorting"]:checked')) {
     selected.push($('input[name="sorting"]:checked')[check].value);
+    selected = selected.filter(Boolean);
   }
-  selected = selected.filter( Boolean );
-  console.log(selected);
+  if (selected.length > 0) {
+    filterByTags(selected);
+  }
 })

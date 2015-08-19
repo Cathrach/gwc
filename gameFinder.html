@@ -39,8 +39,10 @@
         <input type='search' placeholder='Search developer.' class='form-control' id='searchDevField'>
       </div>
       <div class='container-fluid' style='width: 175px; float: left; margin-left: -10px; margin-top: 10px; border-style: solid; border-radius: 10px; border-color: teal; background: #00B0B0'>
-        <input type='checkbox' name='sorting' value='category1'/><b>Category 1</b><br>
-        <input type='checkbox' name='sorting' value='category2'/><b>Category 2</b><br>
+        <input type='checkbox' name='sorting' value='a'/><b>A</b><br>
+        <input type='checkbox' name='sorting' value='b'/><b>B</b><br>
+        <input type='checkbox' name='sorting' value='c'/><b>C</b><br>
+        <input type='checkbox' name='sorting' value='d'/><b>D</b><br>
         <button class='btn btn-primary' type='button' id='filter'>Filter</button>
       </div>
       <div class='container-fluid' style='width: 700px; float: right;' id='gameView'>
@@ -77,6 +79,22 @@
           }
           (shown.length === 0) ? $(gameView).html('No results found.') : $(gameView).html(shown.join(' '));
         }
+      }
+
+      function filterByTags(tags) {
+        shown = [];
+        for (var game in gameList) {
+          var add = true;
+          for (var tag in tags) {
+            if ($.inArray(tag, gameList[game]['tags']) === -1) {
+              add = false;
+            }
+          }
+          if (add === true) {
+            shown.push(gameList[game]['collapsedInfo']);
+          }
+        }
+        (shown.length === 0) ? $(gameView).html('No games satisfy these. Make one yourself!') : $(gameView).html(shown.join(' '));
       }
 
       $(document).ready( function(e) {
