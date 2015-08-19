@@ -53,6 +53,11 @@ $(document).on('click', '#searchDevBtn', function(e) {
   searchDev($('#searchDevField').val());
 })
 
+$(document).on('click', '.gameScreenshot', function(e) {
+  $('#screenshotPreview').attr('src', $(this).attr('src'));
+  $('#imageModal').modal('show');
+})
+
 $(document).on('click', '#filter', function(e) {
   var selected = [];
   for (var check in $('input[name="sorting"]:checked')) {
