@@ -20,7 +20,8 @@ function buildList(data) {
         // list['results'][0] is what we're looking at~
         info = '<div class="container-fluid gameWindow">';
         info += '<div class="container-fluid gameIcon"><h6>' + list['results'][0]['trackName'] + '</h6><img src="' + list['results'][0]['artworkUrl100'] + '" class="gameArt"><br><h6>' + list['results'][0]['artistName'] + '</h6></div>';
-        info += '<div class="container-fluid gameInfo"><img src="' + list['results'][0]['screenshotUrls'][0] + '" class="gameScreenshot"></div>';
+        info += '<div class="container-fluid gameInfo">';
+        info += '<img src="' + list['results'][0]['screenshotUrls'][0] + '" class="gameScreenshot"></div>';
         info += '<div class="container-fluid gameTags"><h5>Tags</h5><p>' + tagStr + '</p><a href="' + list['results'][0]['trackViewUrl'] + '">App Store</a></div>';
         info += '<div class="container-fluid gamePrice"><p style="margin-left: -10px; float: left;">' + list['results'][0]['formattedPrice'] + '</p></div></div>';
 
