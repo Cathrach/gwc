@@ -86,7 +86,7 @@
         for (var game in gameList) {
           var add = true;
           for (var tag in tags) {
-            if ($.inArray(tag, gameList[game]['tags']) === -1) {
+            if ($.inArray(tags[tag], gameList[game]['tags']) === -1) {
               add = false;
             }
           }
