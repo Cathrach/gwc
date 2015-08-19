@@ -19,11 +19,10 @@ function buildList(data) {
       }).done( function(list) {
         // list['results'][0] is what we're looking at~
         info = '<div class="container-fluid gameWindow">';
-        info += '<div class="container-fluid gameIcon"><h6>' + list['results'][0]['trackName'] + '</h6><img src="' + list['results'][0]['artworkUrl100'] + '" class="gameArt"><br><h6>' + list['results'][0]['artistName'] + '</h6></div>';
-        info += '<div class="container-fluid gameInfo">';
-        info += '<img src="' + list['results'][0]['screenshotUrls'][0] + '" class="gameScreenshot"></div>';
-        info += '<div class="container-fluid gameTags"><h5>Tags</h5><p>' + tagStr + '</p><a href="' + list['results'][0]['trackViewUrl'] + '">App Store</a></div>';
-        info += '<div class="container-fluid gamePrice"><p style="margin-left: -10px; float: left;">' + list['results'][0]['formattedPrice'] + '</p></div></div>';
+        info += "<div class='container-fluid game-header'><h3 class='game-name'>" + list['results'][0]['trackName'] + ": " + list['results'][0]['artistName'] + "</h3><h3 class='game-price'>" + list['results'][0]['formattedPrice'] + "</h3></div>";
+        info += "<div class='container-fluid gamePics'><img src='" + list['results'][0]['artworkUrl100'] + "' class='gameIcon' /><img src='" + list['results'][0]['screenshotUrls'][0] + "' class='gameScreenshot' /></div>";
+        info += "<div class='container-fluid gameInfo'><h3 style='float: right;'>Tags:</h3></div>";
+        info += "<div class='container-fluid gameTags'><p>" + tagStr + "</p></div></div>";
 
         gameList.push({"name": list['results'][0]['trackName'], "collapsedInfo": info, "developer": list['results'][0]['artistName'], "tags": tag});
       });
@@ -31,17 +30,6 @@ function buildList(data) {
   }
   filteredList = gameList;
 }
-
-$('.ratings_stars').hover(
-  function() {
-    $(this).prevAll().andSelf().addClass('ratings_over');
-    $(this).nextAll().removeClass('ratings_vote');
-  },
-  function() {
-    $(this).prevAll().andSelf().removeClass('ratings_over');
-    set_vote($(this).parent());
-  }
-)
 
 $(document).on('click', '#searchNameBtn', function(e) {
   e.preventDefault();
