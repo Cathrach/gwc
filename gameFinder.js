@@ -57,8 +57,10 @@ $(document).on('click', '.gameScreenshot', function(e) {
   $('#screenshotPreview').attr('src', $(this).attr('src'));
   if ($('#screenshotPreview').width() > $('#screenshotPreview').height()) {
     $('#screenshotPreview').width(500);
+    break;
   } else {
     $('#screenshotPreview').height(500);
+    break;
   }
   $('#imageModal').modal('show');
 })
