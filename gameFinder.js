@@ -18,8 +18,11 @@ function buildList(data) {
         url: "https://itunes.apple.com/lookup?id=" + url,
       }).done( function(list) {
         // list['results'][0] is what we're looking at~
-        info = '<div class="container-fluid" style="width: 650px; height: 225px; float: right; margin-left: 10px; margin-top: 10px; border-style: solid; border-radius: 10px; border-color: teal; position: relative;"><div class="container-fluid" style="width: 150px; float: left; margin-left: 10px;"><h6>' + list['results'][0]['trackName'] + '</h6><img src="' + list['results'][0]['artworkUrl100'] + '" width="100" height="100"><br><h6>' + list['results'][0]['artistName'] + '</h6></div><div class="container-fluid" style="width: 150px; float: left;"><img src="' + list['results'][0]['screenshotUrls'][0] + '" style="height: 200px; margin-top: 10px;"></div><div class="container-fluid" style="width: 250px; margin-right: 10px; margin-left: 20px; margin-top: 20px; float: left;"><h5>Tags</h5><p>' + tagStr;
-        info += '</p><a href="' + list['results'][0]['trackViewUrl'] + '">App Store</a></div><div class="container-fluid" style="width: 60px; height: 25px; margin-right: 0px; border-style: solid; border-color: blue; border-radius: 5px; position: absolute; bottom: 5px; right: 5px;"><p style="margin-left: -10px; float: left;">' + list['results'][0]['formattedPrice'] + '</p></div></div>';
+        info = '<div class="container-fluid gameWindow">';
+        info += '<div class="container-fluid gameIcon"><h6>' + list['results'][0]['trackName'] + '</h6><img src="' + list['results'][0]['artworkUrl100'] + '" class="gameArt"><br><h6>' + list['results'][0]['artistName'] + '</h6></div>';
+        info += '<div class="container-fluid gameInfo"><img src="' + list['results'][0]['screenshotUrls'][0] + '" class="gameScreenshot"></div>';
+        info += '<div class="container-fluid gameTags"><h5>Tags</h5><p>' + tagStr + '</p><a href="' + list['results'][0]['trackViewUrl'] + '">App Store</a></div>';
+        info += '<div class="container-fluid gamePrice"><p style="margin-left: -10px; float: left;">' + list['results'][0]['formattedPrice'] + '</p></div></div>';
 
         gameList.push({"name": list['results'][0]['trackName'], "collapsedInfo": info, "developer": list['results'][0]['artistName'], "tags": tag});
       });
@@ -27,6 +30,17 @@ function buildList(data) {
   }
   filteredList = gameList;
 }
+
+$('.ratings_stars').hover(
+  function() {
+    $(this).prevAll().andSelf().addClass('ratings_over');
+    $(this).nextAll().removeClass('ratings_vote');
+  },
+  function() {
+    $(this).prevAll().andSelf().removeClass('ratings_over');
+    set_vote($(this).parent());
+  }
+)
 
 $(document).on('click', '#searchNameBtn', function(e) {
   e.preventDefault();
