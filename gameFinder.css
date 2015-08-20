@@ -11,8 +11,13 @@ pre {
   margin-top: 15px;
 }
 
+#header {
+    width: 895px;
+}
+
 #myNavbar {
   background-color: black;
+  width: 895px;
 }
 
 #name {
