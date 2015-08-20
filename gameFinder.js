@@ -19,7 +19,8 @@ function buildList(data) {
       }).done( function(list) {
         // list['results'][0] is what we're looking at~
         info = '<div class="container-fluid gameWindow">';
-        info += "<div class='container-fluid game-header'><h5 class='game-name'>" + list['results'][0]['trackName'] + ": " + list['results'][0]['artistName'] + "</h5><h5 class='game-price'>" + list['results'][0]['formattedPrice'] + "</h5></div>";
+        info += "<div class='container-fluid game-header'>";
+        info += "<h5 class='game-name'><a href='" + list['results'][0]['trackViewUrl'] + "'>" + list['results'][0]['trackName'] + "</a>: <a href='" + list['results'][0]['artistViewUrl'] + "'>" + list['results'][0]['artistName'] + "</a></h5><h5 class='game-price'>" + list['results'][0]['formattedPrice'] + "</h5></div>";
         info += "<div class='container-fluid gamePics'><img src='" + list['results'][0]['artworkUrl100'] + "' class='gameIcon' /><img src='" + list['results'][0]['screenshotUrls'][0] + "' class='gameScreenshot' /></div>";
         info += "<div class='container-fluid gameInfo'><h4 style='float: right;'>Tags:</h4></div>";
         info += "<div class='container-fluid gameTags'><p>" + tagStr + "</p></div></div>";
