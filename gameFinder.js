@@ -28,7 +28,7 @@ function buildList(data) {
         info += list["results"][0]["averageUserRatingForCurrentVersion"] + '" data-rates="' + list["results"][0]["userRatingCountForCurrentVersion"] + '" data-tags="' + tagStr + '" data-ios="' + list["results"][0]["minimumOsVersion"] + '" data-description="' + list["results"][0]["description"] + '">';
         info += "<img src='" + list['results'][0]['artworkUrl100'] + "' class='gameIcon'/><img src='" + list['results'][0]['screenshotUrls'][0] + "' class='gameScreenshot' /></a></div>";
         info += "<div class='container-fluid gameInfo'><h4 style='float: right;'>Tags:</h4></div>";
-        info += "<div class='container-fluid gameTags'><p>" + tagStr + "</p></div></div>";
+        info += "<div class='container-fluid gameTags'><p>" + tagStrLinks + "</p></div></div>";
 
         gameList.push({"name": list['results'][0]['trackName'], "collapsedInfo": info, "developer": list['results'][0]['artistName'], "tags": tag});
       });
