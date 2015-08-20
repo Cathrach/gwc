@@ -9,7 +9,7 @@ function buildList(data) {
     var tags = data[i].Tags.split(',');
     var tagstring = '';
     for (var j in tags) {
-      tagstring += tags[j] + ', ';
+      tagstring += '<a href="javascript:filteryByTags([' + tags[j] + '])">' + tags[j] + '</a>, ';
     }
     tagstring = tagstring.slice(0, -2);
     (function(tag, tagStr, url){
