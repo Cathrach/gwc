@@ -21,7 +21,10 @@ function buildList(data) {
         info = '<div class="container-fluid gameWindow">';
         info += "<div class='container-fluid game-header'>";
         info += "<h5 class='game-name'><a href='" + list['results'][0]['trackViewUrl'] + "'>" + list['results'][0]['trackName'] + "</a>: <a href='" + list['results'][0]['artistViewUrl'] + "'>" + list['results'][0]['artistName'] + "</a></h5><h5 class='game-price'>" + list['results'][0]['formattedPrice'] + "</h5></div>";
-        info += "<div class='container-fluid gamePics'><img src='" + list['results'][0]['artworkUrl100'] + "' class='gameIcon' /><img src='" + list['results'][0]['screenshotUrls'][0] + "' class='gameScreenshot' /></div>";
+        info += "<div class='container-fluid gamePics'>";
+        info += "<a href='#gameModal' class='gameIcon' data-toggle='modal' data-img-url='" + list['results'][0]['artworkUrl100'] + "' data-name='" + list['results'][0]['trackName'] + "' data-developer='" + list['results'][0]['artistName'] + "' data-price='" + list['results'][0]['formattedPrice'] + "' data-rating='";
+        info += list['results'][0]['averageUserRatingForCurrentVersion'] + "' data-rates='" + list['results'][0]['userRatingCountForCurrentVersion'] + "' data-tags='" + tagStr + "' data-ios='" + list['results'][0]['minimumOsVersion'] + "' data-description='" + list['results'][0]['description'] + "'>";
+        info += "<img src='" + list['results'][0]['artworkUrl100'] + "'/><img src='" + list['results'][0]['screenshotUrls'][0] + "' class='gameScreenshot' /></a></div>";
         info += "<div class='container-fluid gameInfo'><h4 style='float: right;'>Tags:</h4></div>";
         info += "<div class='container-fluid gameTags'><p>" + tagStr + "</p></div></div>";
 
@@ -40,6 +43,15 @@ $(document).on('click', '#searchNameBtn', function(e) {
 $(document).on('click', '#searchDevBtn', function(e) {
   e.preventDefault();
   searchDev($('#searchDevField').val());
+})
+
+$(document).on('click', '.gameIcon', function(e) {
+  $('#game-icon img').attr('src', $(this).attr('data-img-url'));
+  $('#game-info').html('<h5>' + $(this).attr('data-name') + ': ' + $(this).attr('data-developer') + '</h5><h6>' + $(this).attr('data-price') + '</h6>');
+  $('#game-rating').html('<p>' + $(this).attr('data-rating') + '/5 (' + $(this).attr('data-rates') + ') ratings</p>');
+  $('#game-tags').html('<p>Tags: ' + $(this).attr('data-tags') + '</p>');
+  $('#ios-version').html('<p>Minimum iOS Version: ' + $(this).attr('data-ios') + '</p>');
+  $('#info-page').html('<p>' + $(this).attr('data-description') + '</p>');
 })
 
 $(document).on('click', '#filter', function(e) {
