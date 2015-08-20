@@ -52,6 +52,7 @@ $(document).on('click', '.gameIcon', function(e) {
   $('#game-tags').html('<p>Tags: ' + $(this).attr('data-tags') + '</p>');
   $('#ios-version').html('<p>Minimum iOS Version: ' + $(this).attr('data-ios') + '</p>');
   $('#info-page').html('<p>' + $(this).attr('data-description') + '</p>');
+  $('#gameModal').modal('show');
 })
 
 $(document).on('click', '#filter', function(e) {
