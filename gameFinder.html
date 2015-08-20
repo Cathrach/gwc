@@ -26,6 +26,29 @@
   </head>
   <body>
     <div class='container-fluid' id='container'>
+      <div id='gameModal' class='modal-fade' role='dialog' aria-hidden='true' aria-labelledby='game-modal'>
+        <div class='modal-header'>
+          <button type='button' data-dismiss='modal'>&times;</button>
+        </div>
+        <div class='modal-body'>
+          <div id='game-icon' style='width: 100px; height:100px;'>
+            <img src='#'>
+          </div>
+          <div id='game-info'>
+          </div>
+          <div id='game-rating'>
+          </div>
+          <div id='game-tags'>
+          </div>
+          <div id='ios-version'>
+          </div>
+          <div id='info-page'>
+          </div>
+        </div>
+        <div class='modal-footer'>
+          <button type='btn btn-default' data-dismiss='modal'>Close</button>
+        </div>
+      </div>
       <img src="http://www.bluepeapod.com/wp-content/themes/delicate/images/header/headers.jpg" style="width: 1090px; height: 200px">
       <h1>Game Frontier</h1>
       <div class='input-group searchBar'>
@@ -65,29 +88,7 @@
         <button class='btn btn-primary' type='button' id='filter'>Filter</button>
       </div>
 
-      <div id='gameModal' class='modal-fade' role='dialog' aria-hidden='true' aria-labelledby='game-modal'>
-        <div class='modal-header'>
-          <button type='button' data-dismiss='modal'>&times;</button>
-        </div>
-        <div class='modal-body'>
-          <div id='game-icon'>
-            <img src='#'>
-          </div>
-          <div id='game-info'>
-          </div>
-          <div id='game-rating'>
-          </div>
-          <div id='game-tags'>
-          </div>
-          <div id='ios-version'>
-          </div>
-          <div id='info-page'>
-          </div>
-        </div>
-        <div class='modal-footer'>
-          <button type='btn btn-default' data-dismiss='modal'>Close</button>
-        </div>
-      </div>
+
 
       <div class='container-fluid' id='gameView'>
       </div>
