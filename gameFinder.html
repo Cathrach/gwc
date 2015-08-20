@@ -26,7 +26,7 @@
     <title>Game Finder</title>
   </head>
   <body>
-    
+
     <div class='container-fluid' id='container'>
       <img src="http://www.bluepeapod.com/wp-content/themes/delicate/images/header/headers.jpg" style="width: 1090px; height: 200px">
       <div class="collapse navbar-collapse" id="myNavbar">
@@ -68,8 +68,10 @@
         <input type='checkbox' name='sorting' value='action'/><b> Action</b><br>
         <input type='checkbox' name='sorting' value='adventure'/><b> Adventure</b><br>
         <input type='checkbox' name='sorting' value='anime'/><b> Anime</b><br>
+        <input type='checkbox' name='sorting' value='arcade'/><b> Arcade</b><br>
         <input type='checkbox' name='sorting' value='cartoon'/><b> Cartoon</b><br>
         <input type='checkbox' name='sorting' value='ccg'/><b> CCG</b><br>
+        <input type='checkbox' name='sorting' value='endless'/><b> Endless</b><br>
         <input type='checkbox' name='sorting' value='energy'/><b> Energy</b><br>
         <input type='checkbox' name='sorting' value='first person'/><b> First Person</b><br>
         <input type='checkbox' name='sorting' value='gacha'/><b> Gacha</b><br>
@@ -95,19 +97,19 @@
             <div class='modal-header'>
               <button type='button' data-dismiss='modal'>&times;</button>
             </div>
-            <div class='modal-body'>
-              <div id='game-icon'>
+            <div class='modal-body' style='position:relative;'>
+              <div id='game-icon' style='border-radius:20px;'>
                 <img src='#' style='width: 100px; height:100px;'>
               </div>
-              <div id='game-info'>
+              <div id='game-info' style='position:absolute; top: 10px; left:120px;'>
               </div>
-              <div id='game-rating'>
+              <div id='game-rating' style='position:absolute; top: 30px; left: 120px;'>
               </div>
-              <div id='game-tags'>
+              <div id='game-tags' style='position:absolute; top: 120px;left:10px;'>
               </div>
-              <div id='ios-version'>
+              <div id='ios-version' style='position:absolute; top: 200px; left:10px;'>
               </div>
-              <div id='info-page'>
+              <div id='info-page' style='height: position:absolute; '>
               </div>
             </div>
             <div class='modal-footer'>
