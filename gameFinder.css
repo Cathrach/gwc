@@ -11,6 +11,14 @@ pre {
   margin-top: 15px;
 }
 
+#myNavbar {
+  background-color: black;
+}
+
+#name {
+  color:white;
+}
+
 .searchBar {
   margin-bottom: 5px;
 }
