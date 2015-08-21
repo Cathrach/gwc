@@ -39,16 +39,6 @@ function buildList(data) {
   filteredList = gameList;
 }
 
-$(document).on('click', '#searchNameBtn', function(e) {
-  e.preventDefault();
-  searchName($('#searchNameField').val());
-})
-
-$(document).on('click', '#searchDevBtn', function(e) {
-  e.preventDefault();
-  searchDev($('#searchDevField').val());
-})
-
 $(document).on('click', '.gameIcon', function(e) {
   $('#game-icon img').attr('src', $(this).attr('data-img-url'));
   $('#game-info').html('<h5>' + $(this).attr('data-name') + ': ' + $(this).attr('data-developer') + '</h5><h5>' + $(this).attr('data-price') + '</h5>');

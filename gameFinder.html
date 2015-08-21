@@ -1,195 +1,174 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset=utf-8>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
+<head>
+  <meta charset=utf-8>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <!-- imports -->
+  <!-- imports -->
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css'>
-    <!-- Optional theme -->
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.css'>
-    <!-- Font Awesome minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
+  <!-- Latest compiled and minified CSS -->
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.css'>
+  <!-- Optional theme -->
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.css'>
+  <!-- Font Awesome minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css">
 
-    <link rel='stylesheet' href='gameFinder.css'>
-    <!-- jQuery -->
-    <script src='jquery-2.1.4.js'></script>
-    <!-- Latest compiled and minified JavaScript -->
-    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js'></script>
+  <link rel='stylesheet' href='gameFinder.css'>
+  <!-- jQuery -->
+  <script src='jquery-2.1.4.js'></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js'></script>
 
-    <script src='tabletop-1.4.2/src/tabletop.js'></script>
+  <script src='tabletop-1.4.2/src/tabletop.js'></script>
 
-    <script src='gameFinder.js'></script>
+  <script src='gameFinder.js'></script>
 
-    <title>Game Finder</title>
-  </head>
-  <body>
+  <title>Game Finder</title>
+</head>
+<body>
 
-    <div class='container-fluid' id='container'>
-      <img src="http://www.bluepeapod.com/wp-content/themes/delicate/images/header/headers.jpg" style="width: 895px; height: 200px" id='header'>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#" id="name">Home</a></li>
-               
-            </li>
+  <div class='container-fluid' id='container'>
+    <img src="http://www.bluepeapod.com/wp-content/themes/delicate/images/header/headers.jpg" style="width: 895px; height: 200px" id='header'>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#" id="name">Home</a></li>
 
-        </li>
-        <!--Spacing for search bar-->
-          <p>                                                                  
-          </p>
-                <div class='input-group searchBar' id='search'>
- <!--                <span class='input-group-btn'>
-                <button class='btn btn-primary' type='button' id='searchNameBtn'><i class='fa fa-search'></i></button>
-                </span> -->
-                <input type='search' placeholder='Search name or developer' class='form-control' id='searchNameField'>
-                </div>
+      </li>
 
-      </ul></div>
+    </li>
+    <!--Spacing for search bar-->
+    <p>
+    </p>
+    <div class='input-group searchBar' id='search'>
+      <!--                <span class='input-group-btn'>
+      <button class='btn btn-primary' type='button' id='searchNameBtn'><i class='fa fa-search'></i></button>
+    </span> -->
+    <input type='search' placeholder='Search name or developer.' class='form-control' id='searchField'>
+  </div>
 
-      <div class='container-fluid' id='filterBox'>
-        <input type='checkbox' name='sorting' value='action'/><b> Action</b><br>
-        <input type='checkbox' name='sorting' value='adventure'/><b> Adventure</b><br>
-        <input type='checkbox' name='sorting' value='anime'/><b> Anime</b><br>
-        <input type='checkbox' name='sorting' value='arcade'/><b> Arcade</b><br>
-        <input type='checkbox' name='sorting' value='cartoon'/><b> Cartoon</b><br>
-        <input type='checkbox' name='sorting' value='ccg'/><b> CCG</b><br>
-        <input type='checkbox' name='sorting' value='endless'/><b> Endless</b><br>
-        <input type='checkbox' name='sorting' value='energy'/><b> Energy</b><br>
-        <input type='checkbox' name='sorting' value='first person'/><b> First Person</b><br>
-        <input type='checkbox' name='sorting' value='gacha'/><b> Gacha</b><br>
-        <input type='checkbox' name='sorting' value='match3'/><b> Match 3</b><br>
-        <input type='checkbox' name='sorting' value='multiplayer'/><b> Multiplayer</b><br>
-        <input type='checkbox' name='sorting' value='pixel'/><b> Pixelated</b><br>
-        <input type='checkbox' name='sorting' value='ported'/><b> Ported</b><br>
-        <input type='checkbox' name='sorting' value='puzzle'/><b> Puzzle</b><br>
-        <input type='checkbox' name='sorting' value='rpg'/><b> Role Playing</b><br>
-        <input type='checkbox' name='sorting' value='sandbox'/><b> Sandbox</b><br>
-        <input type='checkbox' name='sorting' value='side scroller'/><b> Side Scroller</b><br>
-        <input type='checkbox' name='sorting' value='strategy'/><b> Strategy</b><br>
-        <input type='checkbox' name='sorting' value='third person'/><b> Third Person</b><br>
-        <input type='checkbox' name='sorting' value='tower defense'/><b> Tower Defense</b><br>
-        <input type='checkbox' name='sorting' value='free'/><b> Free</b><br>
-        <input type='checkbox' name='sorting' value='paid'/><b> Paid</b><br>
-        <input type='checkbox' name='sorting' value='IAP'/><b> IAP</b><br>
-        <input type='checkbox' name='sorting' value='no IAP'/><b> No IAP</b><br>
-        <button class='btn btn-primary' type='button' id='filter'>Filter</button>
+</ul></div>
+
+<div class='container-fluid' id='filterBox'>
+  <input type='checkbox' name='sorting' value='action'/><b> Action</b><br>
+  <input type='checkbox' name='sorting' value='adventure'/><b> Adventure</b><br>
+  <input type='checkbox' name='sorting' value='anime'/><b> Anime</b><br>
+  <input type='checkbox' name='sorting' value='arcade'/><b> Arcade</b><br>
+  <input type='checkbox' name='sorting' value='cartoon'/><b> Cartoon</b><br>
+  <input type='checkbox' name='sorting' value='ccg'/><b> CCG</b><br>
+  <input type='checkbox' name='sorting' value='endless'/><b> Endless</b><br>
+  <input type='checkbox' name='sorting' value='energy'/><b> Energy</b><br>
+  <input type='checkbox' name='sorting' value='first person'/><b> First Person</b><br>
+  <input type='checkbox' name='sorting' value='gacha'/><b> Gacha</b><br>
+  <input type='checkbox' name='sorting' value='match3'/><b> Match 3</b><br>
+  <input type='checkbox' name='sorting' value='multiplayer'/><b> Multiplayer</b><br>
+  <input type='checkbox' name='sorting' value='pixel'/><b> Pixelated</b><br>
+  <input type='checkbox' name='sorting' value='ported'/><b> Ported</b><br>
+  <input type='checkbox' name='sorting' value='puzzle'/><b> Puzzle</b><br>
+  <input type='checkbox' name='sorting' value='rpg'/><b> Role Playing</b><br>
+  <input type='checkbox' name='sorting' value='sandbox'/><b> Sandbox</b><br>
+  <input type='checkbox' name='sorting' value='side scroller'/><b> Side Scroller</b><br>
+  <input type='checkbox' name='sorting' value='strategy'/><b> Strategy</b><br>
+  <input type='checkbox' name='sorting' value='third person'/><b> Third Person</b><br>
+  <input type='checkbox' name='sorting' value='tower defense'/><b> Tower Defense</b><br>
+  <input type='checkbox' name='sorting' value='free'/><b> Free</b><br>
+  <input type='checkbox' name='sorting' value='paid'/><b> Paid</b><br>
+  <input type='checkbox' name='sorting' value='IAP'/><b> IAP</b><br>
+  <input type='checkbox' name='sorting' value='no IAP'/><b> No IAP</b><br>
+  <button class='btn btn-primary' type='button' id='filter'>Filter</button>
+</div>
+
+<div id='gameModal' class='modal' role='dialog' aria-hidden='true' aria-labelledby='game-modal' tabindex='-1'>
+  <div class='modal-dialog'>
+    <div class='modal-content'>
+      <div class='modal-header'>
+        <button class='btn btn-default' data-dismiss='modal' style='float;right;'>&times;</button>
       </div>
-
-      <div id='gameModal' class='modal' role='dialog' aria-hidden='true' aria-labelledby='game-modal' tabindex='-1'>
-        <div class='modal-dialog'>
-          <div class='modal-content'>
-            <div class='modal-header'>
-              <button class='btn btn-default' data-dismiss='modal' style='float;right;'>&times;</button>
-            </div>
-            <div class='modal-body' style='position:relative;'>
-              <div id='game-icon' style='border-radius:20px;'>
-                <img src='#' style='width: 100px; height:100px;'>
-              </div>
-              <div id='game-info' style='position:absolute; top: 10px; left:130px;'>
-              </div>
-              <div id='game-rating' style='position:absolute; top: 70px; left: 130px;'>
-              </div>
-              <div id='game-tags' style='position:absolute; top: 120px;left:10px;'>
-              </div>
-              <div id='ios-version' style='position:absolute; top: 150px; left:10px;'>
-              </div>
-              <div id='info-page' style='position:absolute; top: 175px; left:10px;'>
-              </div>
-            </div>
-            <div class='modal-footer'>
-              <button class='btn btn-primary' data-dismiss='modal'>Close</button>
-            </div>
-          </div>
+      <div class='modal-body' style='position:relative;'>
+        <div id='game-icon' style='border-radius:20px;'>
+          <img src='#' style='width: 100px; height:100px;'>
+        </div>
+        <div id='game-info' style='position:absolute; top: 10px; left:130px;'>
+        </div>
+        <div id='game-rating' style='position:absolute; top: 70px; left: 130px;'>
+        </div>
+        <div id='game-tags' style='position:absolute; top: 120px;left:10px;'>
+        </div>
+        <div id='ios-version' style='position:absolute; top: 150px; left:10px;'>
+        </div>
+        <div id='info-page' style='position:absolute; top: 175px; left:10px;'>
         </div>
       </div>
-
-      <div class='container-fluid' id='gameView'>
+      <div class='modal-footer'>
+        <button class='btn btn-primary' data-dismiss='modal'>Close</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <script type='text/javascript'>
+<div class='container-fluid' id='gameView'>
+</div>
+</div>
 
-      function searchName(game_name) {
-        shown = [];
-        var query = game_name.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-        if (query.length < 2) {
-          $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
-        } else {
-          for (var game in gameList) {
-            if (gameList[game]['name'].toLowerCase().search(query) != -1) {
-              shown.push(gameList[game]['collapsedInfo']);
-            }
-          }
-          (shown.length === 0) ? $(gameView).html('No results found.') : $(gameView).html(shown.join(' '));
-        }
+<script type='text/javascript'>
+
+function searchDevOrName(input) {
+  shown = [];
+  var query = game_name.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+  if (query.length > 2) {
+    $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
+  } else {
+    for (var game in gameList) {
+      if (gameList[game]['name'].toLowerCase().search(query) != -1 || gameList[game]['developer'].toLowerCase().search(query) != -1) {
+        shown.push(gameList[game]['collapsedInfo']);
       }
+    }
+    (shown.length === 0) ? $(gameView).html('No results found.') : $(gameView).html(shown.join(' '));
+  }
+}
 
-      function searchDev(dev_name) {
-        shown = [];
-        var query = dev_name.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
-        if (query.length < 2) {
-          $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
-        } else {
-          for (var game in gameList) {
-            if (gameList[game]['developer'].toLowerCase().search(query) != -1) {
-              shown.push(gameList[game]['collapsedInfo']);
-            }
-          }
-          (shown.length === 0) ? $(gameView).html('No results found.') : $(gameView).html(shown.join(' '));
-        }
+function filterByTags(tags) {
+  shown = [];
+  for (var game in gameList) {
+    var add = true;
+    for (var tag in tags) {
+      if ($.inArray(tags[tag], gameList[game]['tags']) === -1) {
+        add = false;
       }
+    }
+    if (add === true) {
+      shown.push(gameList[game]['collapsedInfo']);
+    }
+  }
+  (shown.length === 0) ? $(gameView).html('No games satisfy these. Make one yourself!') : $(gameView).html(shown.join(' '));
+}
 
-      function filterByTags(tags) {
-        shown = [];
-        for (var game in gameList) {
-          var add = true;
-          for (var tag in tags) {
-            if ($.inArray(tags[tag], gameList[game]['tags']) === -1) {
-              add = false;
-            }
-          }
-          if (add === true) {
-            shown.push(gameList[game]['collapsedInfo']);
-          }
-        }
-        (shown.length === 0) ? $(gameView).html('No games satisfy these. Make one yourself!') : $(gameView).html(shown.join(' '));
-      }
+$(document).ready( function(e) {
+  gameList = [];
+  Tabletop.init( {
+    key: '1SJr0dKWrsxPr2Y0D3NqLIfiS8Bnen7khEk5wsH6R2ZY',
+    callback: buildList,
+    simpleSheet: true
+  });
 
-      $(document).ready( function(e) {
-        gameList = [];
-        Tabletop.init( {
-          key: '1SJr0dKWrsxPr2Y0D3NqLIfiS8Bnen7khEk5wsH6R2ZY',
-          callback: buildList,
-          simpleSheet: true
-        });
-
-        $('#searchNameField').keypress( function(e) {
-          if (e.keyCode == 13) {
-            searchName($('#searchNameField').val());
-          }
-        })
-
-        $('#searchDevField').keypress( function(e) {
-          if (e.keyCode == 13) {
-            searchDev($('#searchDevField').val());
-          }
-        })
-      })
-    </script>
-  </body>
+  $('#searchField').keypress( function(e) {
+    if (e.keyCode == 13) {
+      searchDevOrName($('#searchField').val());
+    }
+  })
+})
+</script>
+</body>
 </html>
 
 
 <!-- game div -->
 <!--
-  width 650, height: 250
-  name
-  icon: 150 by 150
-  developer
-  screenshot on side: clicking on it brings up modal slideshow
-  on the side (absolute position):
-  tags: up to 2 per line or something :P
-  external app store link on bottom
+width 650, height: 250
+name
+icon: 150 by 150
+developer
+screenshot on side: clicking on it brings up modal slideshow
+on the side (absolute position):
+tags: up to 2 per line or something :P
+external app store link on bottom
 -->
