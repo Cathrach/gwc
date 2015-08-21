@@ -32,32 +32,20 @@
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
           <li class="active"><a href="#" id="name">Home</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" id="name">Name <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li>
-               <div class='input-group searchBar'>
-                <span class='input-group-btn'>
+               
+            </li>
+
+        </li>
+        <!--Spacing for search bar-->
+          <p>                                                                  
+          </p>
+                <div class='input-group searchBar' id='search'>
+ <!--                <span class='input-group-btn'>
                 <button class='btn btn-primary' type='button' id='searchNameBtn'><i class='fa fa-search'></i></button>
-                </span>
-                <input type='search' placeholder='Search name.' class='form-control' id='searchNameField' style='margin-right: 10px;'>
+                </span> -->
+                <input type='search' placeholder='Search name or developer' class='form-control' id='searchNameField'>
                 </div>
-            </li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false" id="name">Developer <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li>
-                    <div class='input-group searchBar'>
-                    <span class='input-group-btn'>
-                    <button class='btn btn-primary' type='button' id='searchDevBtn'><i class='fa fa-search'></i></button>
-                    </span>
-                    <input type='search' placeholder='Search developer.' class='form-control' id='searchDevField'>
-                    </div>
-            </li>
-          </ul>
-        </li>
+
       </ul></div>
 
       <div class='container-fluid' id='filterBox'>
@@ -75,9 +63,10 @@
         <input type='checkbox' name='sorting' value='multiplayer'/><b> Multiplayer</b><br>
         <input type='checkbox' name='sorting' value='pixel'/><b> Pixelated</b><br>
         <input type='checkbox' name='sorting' value='ported'/><b> Ported</b><br>
+        <input type='checkbox' name='sorting' value='puzzle'/><b> Puzzle</b><br>
         <input type='checkbox' name='sorting' value='rpg'/><b> Role Playing</b><br>
         <input type='checkbox' name='sorting' value='sandbox'/><b> Sandbox</b><br>
-        <input type='checkbox' name='sorting' value='side scroller'/> Side Scroller</b><br>
+        <input type='checkbox' name='sorting' value='side scroller'/><b> Side Scroller</b><br>
         <input type='checkbox' name='sorting' value='strategy'/><b> Strategy</b><br>
         <input type='checkbox' name='sorting' value='third person'/><b> Third Person</b><br>
         <input type='checkbox' name='sorting' value='tower defense'/><b> Tower Defense</b><br>

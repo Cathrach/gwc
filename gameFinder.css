@@ -24,6 +24,11 @@ pre {
   color:white;
 }
 
+#search {
+  position:relative;
+  left:670px;
+}
+
 .searchBar {
   margin-bottom: 5px;
 }
