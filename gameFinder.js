@@ -53,7 +53,7 @@ $(document).on('click', '.gameIcon', function(e) {
   $('#game-rating').html('<p>' + $(this).attr('data-rating') + '/5 (' + $(this).attr('data-rates') + ' ratings)</p>');
   $('#game-tags').html('<p>Tags: ' + $(this).attr('data-tags') + '</p>');
   $('#ios-version').html('<p>Minimum iOS Version: ' + $(this).attr('data-ios') + '</p>');
-  $('#info-page').html('<pre>' + $(this).attr('data-description') + '</pre>');
+  $('#info-page').html('<p>' + $(this).attr('data-description').replace(/\n/g, '<br>') + '</p>');
   $('#gameModal').modal('show');
 })
 
