@@ -51,7 +51,7 @@ $(document).on('click', '#searchDevBtn', function(e) {
 
 $(document).on('click', '.gameIcon', function(e) {
   $('#game-icon img').attr('src', $(this).attr('data-img-url'));
-  $('#game-info').html('<h5>' + $(this).attr('data-name') + ': ' + $(this).attr('data-developer') + '</h5><h6>' + $(this).attr('data-price') + '</h6>');
+  $('#game-info').html('<h5>' + $(this).attr('data-name') + ': ' + $(this).attr('data-developer') + '</h5><h5>' + $(this).attr('data-price') + '</h5>');
   $('#game-rating').html('<p>' + $(this).attr('data-rating') + '/5 (' + $(this).attr('data-rates') + ' ratings)</p>');
   $('#game-tags').html('<p>Tags: ' + $(this).attr('data-tags') + '</p>');
   $('#ios-version').html('<p>Minimum iOS Version: ' + $(this).attr('data-ios') + '</p>');
