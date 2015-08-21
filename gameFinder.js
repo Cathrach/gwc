@@ -25,7 +25,9 @@ function buildList(data) {
         info += "<h5 class='game-name'><a href='" + list['results'][0]['trackViewUrl'] + "'>" + list['results'][0]['trackName'] + "</a>: <a href='" + list['results'][0]['artistViewUrl'] + "'>" + list['results'][0]['artistName'] + "</a></h5><h5 class='game-price'>" + list['results'][0]['formattedPrice'] + "</h5></div>";
         info += "<div class='container-fluid gamePics'>";
         info += '<a href="#gameModal" class="gameIcon" data-keyboard="true" data-toggle="modal" data-img-url="' + list["results"][0]["artworkUrl100"] + '" data-name="' + list["results"][0]["trackName"] + '" data-developer="' + list["results"][0]["artistName"] + '" data-price="' + list["results"][0]["formattedPrice"] + '" data-rating="';
-        info += list["results"][0]["averageUserRatingForCurrentVersion"] + '" data-rates="' + list["results"][0]["userRatingCountForCurrentVersion"] + '" data-tags="' + tagStr + '" data-ios="' + list["results"][0]["minimumOsVersion"] + '" data-description="' + list["results"][0]["description"] + '">';
+        info += list["results"][0]["averageUserRatingForCurrentVersion"] + '" data-rates="' + list["results"][0]["userRatingCountForCurrentVersion"] + '" data-tags="' + tagStr + '" data-ios="' + list["results"][0]["minimumOsVersion"] + '" data-description="'
+        info += list["results"][0]["description"].replace(/\n/g, "<br/>");
+        info += '">';
         info += "<img src='" + list['results'][0]['artworkUrl100'] + "' class='gameIcon'/><img src='" + list['results'][0]['screenshotUrls'][0] + "' class='gameScreenshot' /></a></div>";
         info += "<div class='container-fluid gameInfo'><h4 style='float: right;'>Tags:</h4></div>";
         info += "<div class='container-fluid gameTags'><p>" + tagStrLinks + "</p></div></div>";
@@ -53,7 +55,7 @@ $(document).on('click', '.gameIcon', function(e) {
   $('#game-rating').html('<p>' + $(this).attr('data-rating') + '/5 (' + $(this).attr('data-rates') + ' ratings)</p>');
   $('#game-tags').html('<p>Tags: ' + $(this).attr('data-tags') + '</p>');
   $('#ios-version').html('<p>Minimum iOS Version: ' + $(this).attr('data-ios') + '</p>');
-  $('#info-page').html('<p>' + $(this).attr('data-description').replace(/\n/g, '<br>') + '</p>');
+  $('#info-page').html('<p>' + $(this).attr('data-description') + '</p>');
   $('#gameModal').modal('show');
 })
 
