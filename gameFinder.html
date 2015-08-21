@@ -113,7 +113,7 @@
 
 function searchDevOrName(input) {
   shown = [];
-  var query = game_name.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+  var query = input.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
   if (query.length > 2) {
     $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
   } else {
