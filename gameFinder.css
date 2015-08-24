@@ -19,8 +19,7 @@
 }
 
 #search {
-  position:relative;
-  left:670px;
+
 }
 
 .searchBar {
@@ -28,14 +27,15 @@
 }
 
 #filterBox {
-  width: 175px;
+  width: 895px;
   float: left;
   margin-left: -10px;
   margin-top: 10px;
-  border-style: solid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-style: hidden;
   border-radius: 10px;
-  border-color: teal;
-  background: #00B0B0;
+  background: #D9FFFF;
 }
 
 #gameView {
