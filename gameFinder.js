@@ -64,5 +64,10 @@ $(document).on('click', '#filter', function(e) {
   }
   if (selected.length > 0) {
     filterByTags(selected);
+    $('#searchField').val('');
   }
+})
+
+$(document).on('click', '#searchNameBtn', function(e) {
+  searchDevOrName($('#searchField').val());
 })
