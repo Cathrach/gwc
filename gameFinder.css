@@ -15,7 +15,7 @@
   position: absolute;
   top: 100px;
   right: 10px;
-  width: 325px;
+  width: 300px;
 }
 
 #header {
@@ -57,7 +57,7 @@
 }
 
 .gameWindow {
-    width: 650px;
+    width: 895px;
     height: 250px;
     float: right;
     margin-left: 10px;
@@ -75,8 +75,8 @@
     left: 0;
     background: #D9FFFF;
     height: 50px;
-    width: 645px;
-    border-radius: 10px 10px 0 0;
+    width: 890px;
+    border-radius: 5px 5px 0 0;
 }
 
 .game-name {
@@ -106,12 +106,20 @@
     margin: 5px;
 }
 
-.gameScreenshot {
+.gameScreenshotOne {
     position: absolute;
     top: 0;
     left: 120px;
     width: 100px;
-    margin: 5px;
+    margin: 7px;
+}
+
+.gameScreenshotTwo {
+  position: absolute;
+  top: 0;
+  left: 230px;
+  width: 100px;
+  margin: 7px;
 }
 
 .gameTags {
