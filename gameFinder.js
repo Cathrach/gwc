@@ -31,7 +31,8 @@ function buildList(data) {
         info += "<img src='" + list['results'][0]['artworkUrl100'] + "' class='gameIcon'/></a>";
         // info += '<a href="#screenshotModal" class="screenshots" data-keyboard="true" data-toggle="modal" data-local="screenshotCarousel">'
         info += "<a href='#screenshotModal' class='gameScreenshot' data-keyboard='true' data-toggle='modal' data-img-url='" + list['results'][0]['screenshotUrls'][0] + "'><img src='" + list['results'][0]['screenshotUrls'][0] + "' class='gameScreenshotOne'/></a>";
-        info += "<a href='#screenshotModal' class='gameScreenshot' data-keyboard='true' data-toggle='modal' data-img-url='" + list['results'][0]['screenshotUrls'][1] + "'><img src='" + list['results'][0]['screenshotUrls'][1] + "' class='gameScreenshotTwo'/></a></div>";
+        info += "<a href='#screenshotModal' class='gameScreenshot' data-keyboard='true' data-toggle='modal' data-img-url='" + list['results'][0]['screenshotUrls'][1] + "'><img src='" + list['results'][0]['screenshotUrls'][1] + "' class='gameScreenshotTwo'/></a>";
+        info += "<a href='#screenshotModal' class='gameScreenshot' data-keyboard='true' data-toggle='modal' data-img-url='" + list['results'][0]['screenshotUrls'][2] + "'><img src='" + list['results'][0]['screenshotUrls'][2] + "' class='gameScreenshotThree'/></a></div>";
         info += "<div class='container-fluid gameInfo'><h4 style='float: right;'>Tags:</h4></div>";
         info += "<div class='container-fluid gameTags'><p>" + tagStrLinks + "</p></div></div>";
 
