@@ -5,6 +5,19 @@
   margin-top: 15px;
 }
 
+#suggestions {
+  position: absolute;
+  top: 100px;
+  left: 10px;
+}
+
+#aboutus {
+  position: absolute;
+  top: 100px;
+  right: 10px;
+  width: 325px;
+}
+
 #header {
     width: 895px;
 }

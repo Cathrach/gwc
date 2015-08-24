@@ -30,8 +30,36 @@
 </head>
 <body>
 
+  <div id='aboutus'>
+    <h4>About Us</h4>
+    <p>We're two girls who love games and wanted to make it easier for people to find the games they're really interested in.</p>
+  </div>
+
+  <div id='suggestions' class='suggestion-form'>
+    <div class='title'>
+      <strong>Game not here? Tags not right?</strong><br>
+      <strong>Give us some suggestions.</strong>
+    </div>
+    <form id='suggest' target='_self' onsubmit='' action='javascript:postSuggestion()'>
+      <fieldset>
+        <label for='gamename'>Game Name</label><br>
+        <input id='gamename' type='text' name='gamename'>
+      </fieldset>
+      <fieldset>
+        <label for='gametags'>Tags</label><br>
+        <textarea id='gametags' name='gametags'></textarea>
+      </fieldset>
+      <div style='width:100%; display:block; float:right;'>
+        <button class='btn btn-primary' id='send' type='submit'>Suggest</button>
+      </div>
+      <div style="width: 100%; display: block; float: right; padding-top: 15px;">
+        <div class="requestSubmited" style="display:none; text-align: center;">Your request has been sent!</div>
+      </div>
+    </form>
+  </div>
+
   <div class='container-fluid' id='container'>
-    <img src="http://www.bluepeapod.com/wp-content/themes/delicate/images/header/headers.jpg" style="width: 895px; height: 200px" id='header'>
+    <img src="Header\ Image\ For\ G2G.jpg" style="width: 895px; height: 200px" id='header'>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#" id="name">Home</a></li>
@@ -163,6 +191,29 @@
 </div>
 
 <script type='text/javascript'>
+
+function postSuggestion() {
+  var name = $('#gamename').val();
+  var tags = $('#gametags').val();
+  $.ajax({
+    url: 'https://docs.google.com/forms/d/1fbk4UIj3ecQzsTSuF5WufvsrWKf4e8ntZpRYTj-q_dA/formResponse',
+    data: {'entry.240804897': name, 'entry.1730167525': tags},
+    type: 'POST',
+    dataType: 'xml',
+    statusCode: {
+      0: function() {
+        $('#gamename').val('');
+        $('#gametags').val('');
+      },
+      200: function() {
+        $('#gamename').val('');
+        $('#gametags').val('');
+      }
+    }
+  }).done( function(data) {
+    console.log(data);
+  });
+}
 
 function searchDevOrName(input) {
   shown = [];
