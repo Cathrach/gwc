@@ -63,12 +63,8 @@ $(document).on('click', '#filter', function(e) {
     selected.push($('input[name="sorting"]:checked')[check].value);
     selected = selected.filter(Boolean);
   }
-  if (selected.length > 0) {
-    filterByTags(selected);
-    $('#searchField').val('');
-  } else {
-    $(carousel-example-generic).show();
-  }
+   filterByTags(selected);
+   $('#searchField').val('');
 })
 
 $(document).on('click', '#searchNameBtn', function(e) {
