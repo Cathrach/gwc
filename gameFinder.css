@@ -24,8 +24,8 @@
 #suggestions {
   width: 17vw;
   position: fixed;
-  top: 20vw;
-  right: 1vw;
+  bottom: 1vw;
+  right: 1.5vw;
 }
 
 #aboutus {
