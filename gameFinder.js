@@ -67,6 +67,11 @@ $(document).on('click', '#filter', function(e) {
    $('#searchField').val('');
 })
 
+$(document).on('click', '#clearFilter', function(e) {
+	$('input[name="sorting"]').prop('checked', false);
+	filterByTags([]);
+})
+
 $(document).on('click', '#searchNameBtn', function(e) {
   searchDevOrName($('#searchField').val());
 })
