@@ -26,7 +26,7 @@
 
   <script src='gameFinder.js'></script>
 
-  <title>Game Finder</title>
+  <title>Get 2 Games</title>
 </head>
 <body>
 
@@ -42,122 +42,151 @@
       <strong>Give us some suggestions.</strong>
     </div>
     <form id='suggest' target='_self' onsubmit='' action='javascript:postSuggestion()'>
-      <fieldset>
+      <div class='form-group'>
         <label for='gamename'>Game Name</label><br>
-        <input id='gamename' type='text' name='gamename'>
-      </fieldset>
-      <fieldset>
+        <input id='gamename' type='text' class='form-control' placeholder='Brave Frontier' name='gamename'></input>
+      </div>
+      <div class='form-group'>
         <label for='gametags'>Tags</label><br>
-        <textarea id='gametags' name='gametags'></textarea>
-      </fieldset>
+        <input type='text' class='form-control' id='gametags' placeholder='anime, rpg, arcade, etc.' name='gametags'></input>
+      </div>
       <div style='width:100%; display:block; float:right;'>
         <button class='btn btn-primary' id='send' type='submit'>Suggest</button>
       </div>
       <div style="width: 100%; display: block; float: right; padding-top: 15px;">
-        <div class="requestSubmited" style="display:none; text-align: center;">Your request has been sent!</div>
+        <div class="requestSubmitted" style="display:none; text-align: center;">Your request has been sent!</div>
       </div>
     </form>
   </div>
 
   <div class='container-fluid' id='container'>
-    <img src="Header Image For G2G.jpg" style="width: 895px; height: 200px" id='header'>
-
-
-  <h4 style='text-align:center;'>Search by name or developer</h4>
-  <div class='input-group searchBar' id='search'>
-    <span class='input-group-btn'>
-      <button class='btn btn-primary' type='button' id='searchNameBtn'><i class='fa fa-search'></i></button>
-    </span>
-    <input type='search' placeholder='Search name or developer.' class='form-control' id='searchField'>
-  </div>
-  <h5 style='text-align:center;'>--OR--</h5>
-  <h4 style='text-align:center;'>Search by filters</h4>
-
-  <div class='container-fluid' id='filterBox'>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='action'/><b> Action</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='adventure'/><b> Adventure</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='anime'/><b> Anime</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='arcade'/><b> Arcade</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='cartoon'/><b> Cartoon</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='ccg'/><b> CCG</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='endless'/><b> Endless</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='energy'/><b> Energy</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='first person'/><b> First Person</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='female protagonist'/><b> Female Protagonist</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='gacha'/><b> Gacha</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='idle'/><b> Idle</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='match3'/><b> Match 3</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='multiplayer'/><b> Multiplayer</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='music'/><b> Music</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='physics'/><b> Physics</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='piano'/><b> Piano</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='pixelated'/><b> Pixelated</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='ported'/><b> Ported</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='puzzle'/><b> Puzzle</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='rhythm'/><b> Rhythm</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='rpg'/><b> Role Playing</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='runner'/><b> Runner</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='sandbox'/><b> Sandbox</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='side scroller'/><b> Side Scroller</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='social media'/><b> Social Media</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='strategy'/><b> Strategy</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='text'/><b> Text</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='third person'/><b> Third Person</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='tower defense'/><b> Tower Defense</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='free'/><b> Free</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='paid'/><b> Paid</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='IAP'/><b> IAP</b><br></div>
-      <div class='col-md-3'><input type='checkbox' name='sorting' value='no IAP'/><b> No IAP</b><br></div>
-    <div class='row'>
-      <div class='col-md-12'><button class='btn btn-primary' type='button' id='filter'>Filter</button></div>
+    <img src="Header Image For G2G.jpg" id='header'>
+    <div class='container-fluid' id='name-search'>
+      <h4 style='text-align: right;'>Search by name or developer</h4>
+      <div class='input-group searchBar' id='search'>
+        <span class='input-group-btn'>
+          <button class='btn btn-primary' type='button' id='searchNameBtn'><i class='fa fa-search'></i></button>
+        </span>
+        <input type='search' placeholder='Search name or developer.' class='form-control' id='searchField'>
+      </div>
     </div>
-  </div>
+    <div class='container-fluid' id='filter-search'>
+      <h5 style='text-align:right;'>--OR--</h5>
+      <h4 style='text-align:right;'>Search by filters</h4>
+      <div class='container-fluid' id='filterBox'>
+        <ul class='collapsibleList'>
+          <li class='organizer'>
+            <label for='apple-categories'>The Apple Categories</label>
+            <input type='checkbox' id='apple-categories'/>
+            <ul>
+              <li><input type='checkbox' name='sorting' value='action'/><b> Action</b></li>
+              <li><input type='checkbox' name='sorting' value='adventure'/><b> Adventure</b></li>
+              <li><input type='checkbox' name='sorting' value='arcade'/><b> Arcade</b></li>
+              <li><input type='checkbox' name='sorting' value='board'/><b> Board</b></li>
+              <li><input type='checkbox' name='sorting' value='card'/><b> Card</b></li>
+              <li><input type='checkbox' name='sorting' value='casino'/><b> Casino</b></li>
+              <li><input type='checkbox' name='sorting' value='dice'/><b> Dice</b></li>
+              <li><input type='checkbox' name='sorting' value='educational'/><b> Educational</b></li>
+              <li><input type='checkbox' name='sorting' value='family'/><b> Family</b></li>
+              <li><input type='checkbox' name='sorting' value='music'/><b> Music</b></li>
+              <li><input type='checkbox' name='sorting' value='puzzle'/><b> Puzzle</b></li>
+              <li><input type='checkbox' name='sorting' value='racing'/><b> Racing</b></li>
+              <li><input type='checkbox' name='sorting' value='rpg'/><b> Role Playing</b></li>
+              <li><input type='checkbox' name='sorting' value='sports'/><b> Sports</b></li>
+              <li><input type='checkbox' name='sorting' value='strategy'/><b> Strategy</b></li>
+              <li><input type='checkbox' name='sorting' value='trivia'/><b> Trivia</b></li>
+              <li><input type='checkbox' name='sorting' value='word'/><b> Word</b></li>
+            </ul>
+          </li>
+          <li class='organizer'>
+            <label for='everything-else'>The In-depth Categories</label>
+            <input type='checkbox' id='everything-else' class='organizer'/>
+            <ul>
+              <li><input type='checkbox' name='sorting' value='anime'/><b> Anime</b></li>
+              <li><input type='checkbox' name='sorting' value='cartoon'/><b> Cartoon</b></li>
+              <li><input type='checkbox' name='sorting' value='ccg'/><b> CCG</b></li>
+              <li><input type='checkbox' name='sorting' value='endless'/><b> Endless</b></li>
+              <li><input type='checkbox' name='sorting' value='energy'/><b> Energy</b></li>
+              <li><input type='checkbox' name='sorting' value='first person'/><b> First Person</b></li>
+              <li><input type='checkbox' name='sorting' value='female protagonist'/><b> Female Protagonist</b></li>
+              <li><input type='checkbox' name='sorting' value='gacha'/><b> Gacha</b></li>
+              <li><input type='checkbox' name='sorting' value='idle'/><b> Idle</b></li>
+              <li><input type='checkbox' name='sorting' value='match3'/><b> Match 3</b></li>
+              <li><input type='checkbox' name='sorting' value='multiplayer'/><b> Multiplayer</b></li>
+              <li><input type='checkbox' name='sorting' value='physics'/><b> Physics</b></li>
+              <li><input type='checkbox' name='sorting' value='piano'/><b> Piano</b></li>
+              <li><input type='checkbox' name='sorting' value='pixelated'/><b> Pixelated</b></li>
+              <li><input type='checkbox' name='sorting' value='ported'/><b> Ported</b></li>
+              <li><input type='checkbox' name='sorting' value='rhythm'/><b> Rhythm</b></li>
+              <li><input type='checkbox' name='sorting' value='runner'/><b> Runner</b></li>
+              <li><input type='checkbox' name='sorting' value='sandbox'/><b> Sandbox</b></li>
+              <li><input type='checkbox' name='sorting' value='side scroller'/><b> Side Scroller</b></li>
+              <li><input type='checkbox' name='sorting' value='social media'/><b> Social Media</b></li>
+              <li><input type='checkbox' name='sorting' value='text'/><b> Text</b></li>
+              <li><input type='checkbox' name='sorting' value='third person'/><b> Third Person</b></li>
+              <li><input type='checkbox' name='sorting' value='tower defense'/><b> Tower Defense</b></li>
+            </ul>
+          </li>
+          <li class='organizer'>
+            <label for='price-categories'>The Price Categories</label>
+            <input type='checkbox' id='price-categories' class='organizer'/>
+            <ul>
+              <li><input type='checkbox' name='sorting' value='free'/><b> Free</b></li>
+              <li><input type='checkbox' name='sorting' value='paid'/><b> Paid</b></li>
+              <li><input type='checkbox' name='sorting' value='IAP'/><b> IAP</b></li>
+              <li><input type='checkbox' name='sorting' value='no IAP'/><b> No IAP</b></li>                          
+            </ul>
+          </li>         
+        </ul>
+        <button class='btn btn-primary' type='button' id='filter'>Filter</button>
+      </div>
+    </div>
 
-  <div id='gameModal' class='modal' role='dialog' aria-hidden='true' aria-labelledby='game-modal' tabindex='-1'>
-    <div class='modal-dialog'>
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <button class='btn btn-default' data-dismiss='modal' style='float;right;'>&times;</button>
-        </div>
-        <div class='modal-body' style='position:relative; height: 600px; overflow: scroll;'>
-          <div id='game-icon'>
-            <img src='#' style='width: 100px; height:100px; border-radius:20px;'>
+    <div id='gameModal' class='modal' role='dialog' aria-hidden='true' aria-labelledby='game-modal' tabindex='-1'>
+      <div class='modal-dialog'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <button class='btn btn-default' data-dismiss='modal' style='float;right;'>&times;</button>
           </div>
-          <div id='game-info' style='position:absolute; top: 10px; left:130px;'>
+          <div class='modal-body' style='position:relative; height: 600px; overflow: scroll;'>
+            <div id='game-icon'>
+              <img src='#' style='width: 100px; height:100px; border-radius:20px;'>
+            </div>
+            <div id='game-info' style='position:absolute; top: 10px; left:130px;'>
+            </div>
+            <div id='game-rating' style='position:absolute; top: 70px; left: 130px;'>
+            </div>
+            <div id='game-tags' style='position:absolute; top: 120px;left:10px;'>
+            </div>
+            <div id='ios-version' style='position:absolute; top: 175px; left:10px;'>
+            </div>
+            <div id='info-page' style='position:absolute; top: 200px; left:10px;'>
+            </div>
           </div>
-          <div id='game-rating' style='position:absolute; top: 70px; left: 130px;'>
+          <div class='modal-footer'>
+            <button class='btn btn-primary' data-dismiss='modal'>Close</button>
           </div>
-          <div id='game-tags' style='position:absolute; top: 120px;left:10px;'>
-          </div>
-          <div id='ios-version' style='position:absolute; top: 150px; left:10px;'>
-          </div>
-          <div id='info-page' style='position:absolute; top: 200px; left:10px;'>
-          </div>
-        </div>
-        <div class='modal-footer'>
-          <button class='btn btn-primary' data-dismiss='modal'>Close</button>
         </div>
       </div>
     </div>
-  </div>
 
-  <div id='screenshotModal' class='modal fade' role='dialog' aria-hidden='true' aria-labelledby='screenshotmodal'>
-    <div class='modal-dialog'>
-      <div class='modal-content'>
-        <div class='modal-header'>
-          <button class='btn' class='close' data-dismiss='modal'>&times;</button>
-        </div>
-        <div class='modal-body'>
-          <div id='game-screen'>
-            <img src='#' style='width: 80%;'/>
+    <div id='screenshotModal' class='modal fade' role='dialog' aria-hidden='true' aria-labelledby='screenshotmodal'>
+      <div class='modal-dialog'>
+        <div class='modal-content'>
+          <div class='modal-header'>
+            <button class='btn' class='close' data-dismiss='modal'>&times;</button>
           </div>
-        </div>
-        <div class='modal-footer'>
-          <button class='btn' data-dismiss='modal'>Close</button>
+          <div class='modal-body'>
+            <div id='game-screen'>
+              <img src='#' style='width: 80%;'/>
+            </div>
+          </div>
+          <div class='modal-footer'>
+            <button class='btn' data-dismiss='modal'>Close</button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 
   <!-- <div id='screenshotCarousel' class='carousel slide carousel-fit' data-ride='carousel' data-interval='60000'>
     <div class='carousel-inner'>
@@ -187,6 +216,40 @@
   </div> -->
 
   <div class='container-fluid' id='gameView'>
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="Header Image For G2G.jpg">
+          <div class="carousel-caption">
+            Lorem ipsum dolor sit amet~~
+          </div>
+        </div>
+        <div class="item">
+          <img src="Header Image For G2G.jpg">
+          <div class="carousel-caption">
+            :3 \(^_^)/
+          </div>
+        </div>
+        placeholder images
+      </div>
+
+      <!-- Controls -->
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -243,14 +306,19 @@ function filterByTags(tags) {
       shown.push(gameList[game]['collapsedInfo']);
     }
   }
-  (shown.length === 0) ? $(gameView).html('No games satisfy these. Make one yourself!') : $(gameView).html(shown.join(' '));
+  if (shown.length === 0) {
+    $(gameView).html('No games satisfy these. Make one yourself!');
+  } else {
+    $(gameView).html(shown.join(' '));
+    $(carousel-example-generic).hide();
+  }
 }
 
 $(document).ready( function(e) {
   gameList = [];
   Tabletop.init( {
     key: '1SJr0dKWrsxPr2Y0D3NqLIfiS8Bnen7khEk5wsH6R2ZY',
-    orderby: 'id',
+    orderby: 'name',
     callback: buildList,
     simpleSheet: true
   });

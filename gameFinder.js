@@ -66,6 +66,8 @@ $(document).on('click', '#filter', function(e) {
   if (selected.length > 0) {
     filterByTags(selected);
     $('#searchField').val('');
+  } else {
+    $(carousel-example-generic).show();
   }
 })
 
