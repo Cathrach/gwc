@@ -41,17 +41,18 @@
 
 #searches {
   width: 20vw;
-  height: 100vw;
+  height: 50vw;
   overflow: scroll;
   margin: 0;
-  position: relative;
+  position: fixed;
+  top: 0vw;
+  left: 0vw;
 }
 
 #name-search {
   width: 19vw;
-  position: fixed;
-  top: 2vw;
-  left: 0.5vw;
+  position: absolute;
+  top: 2vh;
 }
 
 .searchBar {
@@ -60,9 +61,8 @@
 
 #filter-search {
   width: 19vw;
-  position: fixed;
-  top: 10vw;
-  left: 0.5vw;
+  position: absolute;
+  top: 13vh;
 }
 
 #filterBox {
