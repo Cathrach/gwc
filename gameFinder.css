@@ -52,8 +52,6 @@
 
 #filter-search {
   width: 19vw;
-  height: 50vw;
-  overflow: scroll;
   position: fixed;
   top: 10vw;
   left: 0.5vw;
