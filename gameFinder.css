@@ -39,6 +39,14 @@
     width: 60vw;
 }
 
+#searches {
+  width: 20vw;
+  height: 100vw;
+  overflow: scroll;
+  margin: 0;
+  position: relative;
+}
+
 #name-search {
   width: 19vw;
   position: fixed;
