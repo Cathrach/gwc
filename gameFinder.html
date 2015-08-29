@@ -322,7 +322,7 @@ function filterByTags(tags) {
       }
     }
     if (shown.length === 0) {
-      $(gameView).html('No games satisfy these. Make one yourself!');
+      $(gameView).html('No games satisfy these...yet! When we find a game for these, we\'ll add it!');
     } else {
       $(gameView).html(shown.join(' '));
     }
