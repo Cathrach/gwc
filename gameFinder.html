@@ -294,7 +294,7 @@ function searchDevOrName(input) {
   } else {
     $.ajax({
       dataType: 'jsonp',
-      url: 'https://itunes.apple.com/search?term=' + query + '&entity=software'
+      url: 'https://itunes.apple.com/search?term=' + query + '&entity=software&limit=25'
     }).done( function(list) {
       getObjects(list);
       for (var game in filteredList) {
