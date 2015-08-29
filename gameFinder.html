@@ -287,16 +287,21 @@ function postSuggestion() {
 
 function searchDevOrName(input) {
   shown = [];
-  var query = input.toLowerCase().replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+  $(gameView).html('');
+  var query = input.toLowerCase().trim().replace(/\W/g, '+');
   if (query.length < 2) {
     $(gameView).html('<h4><b>Not enough characters. Try again.</b></h4>');
   } else {
-    for (var game in gameList) {
-      if (gameList[game]['name'].toLowerCase().search(query) != -1 || gameList[game]['developer'].toLowerCase().search(query) != -1) {
-        shown.push(gameList[game]['collapsedInfo']);
+    $.ajax({
+      dataType: 'jsonp',
+      url: 'https://itunes.apple.com/search?term=' + query + '&entity=software'
+    }).done( function(list) {
+      getObjects(list);
+      for (var game in filteredList) {
+        shown.push(filteredList[game]['collapsedInfo']);
       }
-    }
-    (shown.length === 0) ? $(gameView).html('No results found.') : $(gameView).html(shown.join(' '));
+      $(gameView).html(shown.join(' '));
+    });
   }
 }
 
